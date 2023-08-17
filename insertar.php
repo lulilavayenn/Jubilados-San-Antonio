@@ -25,6 +25,16 @@ $UM=$_POST['UM'];
 $OBSERVACIONES=$_POST['OBSERVACIONES'];
 
 
+if (!($ID_SOCIO=="" or $AYP=="" or $DNI=="" or $FC==""))
+{
+	$sql="INSERT INTO cliente VALUES ('$ID_SOCIO', '$BOLSON', '$AYP', '$EDAD', '$DNI', '$FC', '$NACIONALIDAD', '$EC', '$TELEFONO', '$DOMICILIO', '$CP', '$LOCALIDAD', '$FI', '$JUBILADO', '$PENSIONADO', '$ADHERENTE','$BENEFICIO', '$PM', '$UM',  '$OBSERVACIONES')";
+
+	$query=mysqli_query($con,$sql);
+
+	    if($query){
+	        Header("Location: cliente.php");
+	    }
+}
 // $ID_CLIENTE=$_POST['ID_CLIENTE'];
 // $fecha=$_POST['fecha'];
 // $dominio=$_POST['dominio'];
@@ -39,13 +49,15 @@ $OBSERVACIONES=$_POST['OBSERVACIONES'];
 // $engrase=$_POST['engrase'];
 // $proximo=$_POST['proximo'];
 // $observaciones=$_POST['observaciones'];
+else
+{
+	echo '<script>
+	if (window.confirm("CAMPOS INCOMPLETOS"))
+	{
+	  window.open("cliente.php", Target="_self");
+	}
+	</script>';
+}
 
 
-$sql="INSERT INTO cliente VALUES ('$ID_SOCIO', '$BOLSON', '$AYP', '$EDAD', '$DNI', '$FC', '$NACIONALIDAD', '$EC', '$TELEFONO', '$DOMICILIO', '$CP', '$LOCALIDAD', '$FI', '$JUBILADO', '$PENSIONADO', '$ADHERENTE','$BENEFICIO', '$PM', '$UM',  '$OBSERVACIONES')";
-
-$query=mysqli_query($con,$sql);
-
-    if($query){
-        Header("Location: cliente.php");
-    }
 ?>
