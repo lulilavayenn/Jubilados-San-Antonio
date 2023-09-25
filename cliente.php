@@ -26,25 +26,10 @@
                                 <form action="insertar.php" method="POST">
 
                                     <input type="text" class="form-control mb-3" name="ID_SOCIO" placeholder="SOCIO Nº">
-                                    <input type="text" class="form-control mb-3" name="BOLSON" placeholder="BOLSON">
                                     <input type="text" class="form-control mb-3" name="AYP" placeholder="APELLIDO Y NOMBRE">
-                                    <input type="text" class="form-control mb-3" name="EDAD" placeholder="EDAD">
                                     <input type="text" class="form-control mb-3" name="DNI" placeholder="DNI">
-                                    <input type="text" class="form-control mb-3" name="FC" placeholder="FECHA DE NAC.">
-                                    <input type="text" class="form-control mb-3" name="NACIONALIDAD" placeholder="NACIONALIDAD">
-                                    <input type="text" class="form-control mb-3" name="EC" placeholder="ESTADO CIVIL">
-                                    <input type="text" class="form-control mb-3" name="TELEFONO" placeholder="TELEFONO">
-                                    <input type="text" class="form-control mb-3" name="DOMICILIO"placeholder="DOMICILIO">
-                                    <input type="text" class="form-control mb-3" name="CP" placeholder="CODIGO POSTAL">
-                                    <input type="text" class="form-control mb-3" name="LOCALIDAD" placeholder="LOCALIDAD">
-                                    <input type="text" class="form-control mb-3" name="FI" placeholder="FECHA DE INGRESO">
-                                    <input type="text" class="form-control mb-3" name="JUBILADO" placeholder="JUBILADO">
-                                    <input type="text" class="form-control mb-3" name="ADHERENTE" placeholder="ADHERENTE">
-                                    <input type="text" class="form-control mb-3" name="PENSIONADO" placeholder="PENSIONADO">
-                                    <input type="text" class="form-control mb-3" name="BENEFICIO" placeholder="BENEFICIO">
-                                    <input type="text" class="form-control mb-3" name="PM" placeholder="PRIMER MES">
-                                    <input type="text" class="form-control mb-3" name="UM" placeholder="ULTIMO MES">
-                                    <input type="text" class="form-control mb-3" name="OBSERVACIONES" placeholder="OBSERVACIONES">
+                                    <input type="text" class="form-control mb-3" name="CDS" placeholder="CATEGORIA DE SOCIO">
+                                    <input type="text" class="form-control mb-3" name="DAV" placeholder="DERECHO A VOTO">
                                     
                                     <input type="submit" class="btn btn-primary">
                                 </form>
@@ -55,25 +40,10 @@
                                 <thead class="table-success table-striped" >
                                     <tr>
                                         <th>SOCIO Nº</th>
-                                        <th>BOLSON</th>
                                         <th>APELLIDO Y NOMBRE</th>
-                                        <th>EDAD</th>
                                         <th>DNI</th>
-                                        <th>FECHA DE NAC.</th>
-                                        <th>NACIONALIDAD</th>
-                                        <th>ESTADO CIVIL</th>
-                                        <th>TELEFONO</th>
-                                        <th>DOMICILIO</th>
-                                        <th>C.P</th>
-                                        <th>LOCALIDAD</th>
-                                        <th>FECHA DE INGRESO</th>
-                                        <th>JUBILADO</th>
-                                        <th>ADHERENTE</th>
-                                        <th>PENSIONADO</th>
-                                        <th>BENEFICIO Nº</th>
-                                        <th>PRIMER MES</th>
-                                        <th>ULTIMO MES</th>
-                                        <th>OBSERVACIONES</th>
+                                        <th>CATEGORIA DE SOCIO</th>
+                                        <th>DERECHO A VOTO</th>
 
                                         <th></th>
                                         <th></th>
@@ -85,26 +55,11 @@
                                             while($row=mysqli_fetch_array($query)){
                                         ?>
                                             <tr>
-                                                <th><?php  echo $row['ID_SOCIO']?></th>
-                                                <th><?php  echo $row['BOLSON']?></th>
+                                                <th><?php  echo $row['ID_SOCIO']?></th>>
                                                 <th><?php  echo $row['AYP']?></th>
-                                                <th><?php  echo $row['EDAD']?></th>
                                                 <th><?php  echo $row['DNI']?></th>  
-                                                <th><?php  echo $row['FC']?></th>
-                                                <th><?php  echo $row['NACIONALIDAD']?></th> 
-                                                <th><?php  echo $row['EC']?></th> 
-                                                <th><?php  echo $row['TELEFONO']?></th> 
-                                                <th><?php  echo $row['DOMICILIO']?></th> 
-                                                <th><?php  echo $row['CP']?></th> 
-                                                <th><?php  echo $row['LOCALIDAD']?></th> 
-                                                <th><?php  echo $row['FI']?></th> 
-                                                <th><?php  echo $row['JUBILADO']?></th> 
-                                                <th><?php  echo $row['ADHERENTE']?></th> 
-                                                <th><?php  echo $row['PENSIONADO']?></th> 
-                                                <th><?php  echo $row['BENEFICIO']?></th> 
-                                                <th><?php  echo $row['PM']?></th> 
-                                                <th><?php  echo $row['UM']?></th> 
-                                                <th><?php  echo $row['OBSERVACIONES']?></th>
+                                                <th><?php  echo $row['CDS']?></th> 
+                                                <th><?php  echo $row['DAV']?></th>
 
 
                                                 <th><a href="actualizar.php?id=<?php echo $row['ID_SOCIO'] ?>" class="btn btn-info">Editar</a></th>

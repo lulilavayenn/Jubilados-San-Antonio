@@ -4,30 +4,15 @@ include("conexion.php");
 $con=conectar();
 
 $ID_SOCIO=$_POST['ID_SOCIO'];
-$BOLSON=$_POST['BOLSON'];
 $AYP=$_POST['AYP'];
-$EDAD=$_POST['EDAD'];
 $DNI=$_POST['DNI'];
-$FC=$_POST['FC'];
-$NACIONALIDAD=$_POST['NACIONALIDAD'];
-$EC=$_POST['EC'];
-$TELEFONO=$_POST['TELEFONO'];
-$DOMICILIO=$_POST['DOMICILIO'];
-$CP=$_POST['CP'];
-$LOCALIDAD=$_POST['LOCALIDAD'];
-$FI=$_POST['FI'];
-$JUBILADO=$_POST['JUBILADO'];
-$PENSIONADO=$_POST['PENSIONADO'];
-$ADHERENTE=$_POST['ADHERENTE'];
-$BENEFICIO=$_POST['BENEFICIO'];
-$PM=$_POST['PM'];
-$UM=$_POST['UM'];
-$OBSERVACIONES=$_POST['OBSERVACIONES'];
+$CDS=$_POST['CDS'];
+$DAV=$_POST['DAV'];
 
 
-if (!($ID_SOCIO=="" or $AYP=="" or $DNI=="" or $FC==""))
+if (!($ID_SOCIO=="" or $AYP=="" or $DNI==""))
 {
-	$sql="INSERT INTO cliente VALUES ('$ID_SOCIO', '$BOLSON', '$AYP', '$EDAD', '$DNI', '$FC', '$NACIONALIDAD', '$EC', '$TELEFONO', '$DOMICILIO', '$CP', '$LOCALIDAD', '$FI', '$JUBILADO', '$PENSIONADO', '$ADHERENTE','$BENEFICIO', '$PM', '$UM',  '$OBSERVACIONES')";
+	$sql="INSERT INTO cliente VALUES ('$ID_SOCIO', '$AYP', '$DNI', '$CDS',  '$DAV')";
 
 	$query=mysqli_query($con,$sql);
 
